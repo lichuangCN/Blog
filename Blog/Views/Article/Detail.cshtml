@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutFront.cshtml";
+    ViewBag.Title = ViewBag.atitle;
+}
+<div class="meta">
+    <h1 class="meta-tit">@ViewBag.atitle</h1>
+    <p class="meta-info">发表：Blog &nbsp;&nbsp; 发表日期：@ViewBag.creatTime &nbsp;&nbsp; </p>
+</div>
+
+<div class="entry">
+    <p style="text-align:center">
+        作者：@ViewBag.author<br />
+    </p>
+    <div style="padding:0px;margin:0px">
+        @Html.Raw(ViewBag.content)
+        <p style="font-family:楷体">   文章版权属于文章作者所有，转载请注明：</p>
+    </div>
+</div>
+<br><br>
+<script>
+    SyntaxHighlighter.all();
+</script>
+
+
+

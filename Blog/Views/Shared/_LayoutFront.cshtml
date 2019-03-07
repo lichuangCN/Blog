@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Assets/FrontEnd/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/Assets/FrontEnd/images/LOGO.jpg" />
+    <script src="~/Assets/BackEnd/js/jquery-3.2.1.js"></script>
+    <script src="~/Content/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+    <link href="~/Content/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <script src="~/Assets/BackEnd/js/layer.js"></script>
+    <link href="~/Assets/BackEnd/css/layer.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript">
+        if (top.location != self.location) {
+            top.location = self.location
+        } </script>
+</head>
+<body class="home blog">  
+    <div class="img" style="margin:0;padding:0">
+        <img src="~/Assets/FrontEnd/images/top-2.png" height="300" width="100%">
+    </div>  
+    <div class="topbar">
+        <div class="inner">
+            <ul class="nav">
+                <li id="menu-item-180" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-180">
+                    @Html.ActionLink("首页", "Index", "Home")
+                </li>
+                @Html.Action("showCates", "Home")
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="content">
+            @RenderBody()
+        </div>
+        <div class="sidebar">                       
+            <div class="widget widget_recent_entries">
+                <h3 class="widget-tit">最新发表</h3>
+                <ul style="font-size:14px;font-family:楷体">
+                    @Html.Action("showLastest", "Home")
+                </ul>
+            </div>   
+            <div class="widget widget_links">
+                <h3 class="widget-tit">音乐盒</h3>
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=310 height=230 src="//music.163.com/outchain/player?type=0&id=2023403660&auto=1&height=430"></iframe>
+            </div>       
+        </div>
+    </div>
+    <div id="bottom">
+        <div style="color:white;text-align:center;padding-top:15px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            <p>COPYRIGHT 2017 ASP.NET BLOG. ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+    <script type='text/javascript' src='http://yispace.net/wp-includes/js/wp-embed.min.js?ver=4.5.2'></script>   
+</body>
+</html>

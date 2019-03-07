@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <section name="razorJSSettings" type="RazorJS.Configuration.RazorJSSettings, RazorJS" />
+    </configSections>
+    <system.webServer>
+        <handlers>
+            <add name="RazorJSHandler" path="razorjs.axd" verb="GET" type="RazorJS.RazorJSHandler" />
+        </handlers>
+    </system.webServer>
+    <system.web>
+        <httpHandlers>
+            <add path="razorjs.axd" verb="GET" type="RazorJS.RazorJSHandler" />
+        </httpHandlers>
+    </system.web>
+    <razorJSSettings handlerPath="~/razorjs.axd">
+        <!-- If empty all paths are valid -->
+        <allowedPaths>
+            <add path="~/Scripts" />
+        </allowedPaths>
+    </razorJSSettings>
+</configuration>

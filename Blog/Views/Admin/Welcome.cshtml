@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_LayoutBack.cshtml";
+}
+<div class="crumb-wrap">
+    <div class="crumb-list"><i class="icon-font">&#xe06b;</i><span>ASP.NET MVC个人博客</span></div>
+</div>
+<div class="result-wrap">
+    <div class="result-title">
+        <h1>快捷操作</h1>
+    </div>
+    <div class="result-content">
+        <div class="short-wrap">
+            <a href="~/Article/addArticle" target="_blank"><i class="icon-font">&#xe005;</i>新增博文</a>
+            <a onclick="addCateLayer()"><i class="icon-font">&#xe005;</i>新增博客分类</a>
+        </div>
+    </div>
+</div>
+<div class="result-wrap">
+    <div class="result-content">
+        <h1>欢迎登录Blog的管理系统</h1>
+    </div>
+</div>
+<p id="addCateUrl" hidden>
+    @Href("~/Cate/AddCate")
+</p>
+<script>
+    function addCateLayer() {
+        layer.open({
+            type: 2,
+            title: '新增分类',
+            maxmin: true,
+            shadeClose: true, //点击遮罩关闭层
+            area: ['550px', '400px'],
+            content: $("#addCateUrl").text()
+        });
+    }
+</script>
+
